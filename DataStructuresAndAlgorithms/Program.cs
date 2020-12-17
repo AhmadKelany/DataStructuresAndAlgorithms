@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructuresAndAlgorithms.Algorithms.Sort;
+using System;
 
 namespace DataStructuresAndAlgorithms
 {
@@ -6,7 +7,9 @@ namespace DataStructuresAndAlgorithms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int[] array = new[] { 11, 2, 3 , 0 , -5 , -15 , 0 , 45 , -100};
+            SelectionSort.Sort(array);
+            Console.ReadLine();
         }
     }
 }
