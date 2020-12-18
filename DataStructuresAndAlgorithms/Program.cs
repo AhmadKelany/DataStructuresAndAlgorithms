@@ -8,7 +8,7 @@ namespace DataStructuresAndAlgorithms
         static void Main(string[] args)
         {
             int[] array = new[] { 11, 2, 3 , 0 , -5 , -15 , 0 , 45 , -100};
-            SelectionSort.Sort(array);
+            InsertionSort.Sort(array);
             Console.ReadLine();
         }
     }

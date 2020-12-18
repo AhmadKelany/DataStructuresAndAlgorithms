@@ -11,8 +11,8 @@ namespace DataStructuresAndAlgorithms.Algorithms.Sort
         public static void Sort<T>(T[] array) where T : IComparable
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(DisplayArray(array));
-            Screen.WriteLine($"The array now is: {DisplayArray(array)}" , ConsoleColor.Green);
+            sb.AppendLine(ArrayHelper.DisplayArray(array));
+            Screen.WriteLine($"The array now is: {ArrayHelper.DisplayArray(array)}" , ConsoleColor.Green);
             for (int i = 0; i < array.Length - 1; i++)
             {
 
@@ -43,31 +43,16 @@ namespace DataStructuresAndAlgorithms.Algorithms.Sort
                 }
                 Screen.WriteLine($"        inner loop is finished");
                 Screen.WriteLine($"    now we swab the array element at i:({i}) and min index:({minIndex}), their values are {array[i]} and {array[minIndex]}");
-                Swap(array, i, minIndex);
-                sb.AppendLine(DisplayArray(array));
+                ArrayHelper.Swap(array, i, minIndex);
+                sb.AppendLine(ArrayHelper.DisplayArray(array));
                 Screen.WriteLine($"ended outer loop {i + 1} iteration" , ConsoleColor.Yellow);
                 Console.WriteLine();
-                Screen.WriteLine($"The array now is: {DisplayArray(array)}" , ConsoleColor.Green);
+                Screen.WriteLine($"The array now is: {ArrayHelper.DisplayArray(array)}" , ConsoleColor.Green);
             }
             Screen.WriteLine($"=========================================");
             Screen.WriteLine($"after outer loop finished");
             Screen.WriteLine($"All the operations:");
             Screen.WriteLine(sb.ToString());
-        }
-        private static string DisplayArray<T>(T[] array)
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (T item in array)
-            {
-                sb.Append(string.Format("{0,4}", $"{item}"));
-            }
-            return sb.ToString();
-        }
-        private static void Swap<T>(T[] array, int first, int second)
-        {
-            T temp = array[first];
-            array[first] = array[second];
-            array[second] = temp;
         }
     }
 }
